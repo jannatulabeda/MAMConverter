@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		646C34911C685C9E0079198D /* UnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 646C34901C685C9E0079198D /* UnitConverter.m */; };
+		649874FC1C69D3DE002497BF /* Blue copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 649874FB1C69D3DE002497BF /* Blue copy.png */; };
+		649874FE1C69D741002497BF /* swap-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 649874FD1C69D741002497BF /* swap-image.png */; };
 		64CE32C21C684AE1008393EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CE32C11C684AE1008393EA /* main.m */; };
 		64CE32C51C684AE1008393EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CE32C41C684AE1008393EA /* AppDelegate.m */; };
 		64CE32C81C684AE1008393EA /* CurrencyConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CE32C71C684AE1008393EA /* CurrencyConverter.m */; };
@@ -24,6 +26,8 @@
 		271FAF9EDC76DA0BA84B4CE5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		646C348F1C685C9E0079198D /* UnitConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitConverter.h; sourceTree = "<group>"; };
 		646C34901C685C9E0079198D /* UnitConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitConverter.m; sourceTree = "<group>"; };
+		649874FB1C69D3DE002497BF /* Blue copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue copy.png"; sourceTree = "<group>"; };
+		649874FD1C69D741002497BF /* swap-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swap-image.png"; sourceTree = "<group>"; };
 		64CE32BD1C684AE1008393EA /* MAMConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAMConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64CE32C11C684AE1008393EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64CE32C31C684AE1008393EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 		64CE32BF1C684AE1008393EA /* MAMConverter */ = {
 			isa = PBXGroup;
 			children = (
+				649874FD1C69D741002497BF /* swap-image.png */,
+				649874FB1C69D3DE002497BF /* Blue copy.png */,
 				64CE32DA1C684FF7008393EA /* logo.png */,
 				64CE32C31C684AE1008393EA /* AppDelegate.h */,
 				64CE32C41C684AE1008393EA /* AppDelegate.m */,
@@ -176,6 +182,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649874FE1C69D741002497BF /* swap-image.png in Resources */,
+				649874FC1C69D3DE002497BF /* Blue copy.png in Resources */,
 				64CE32DB1C684FF7008393EA /* logo.png in Resources */,
 				64CE32D31C684AE2008393EA /* LaunchScreen.storyboard in Resources */,
 				64CE32D01C684AE2008393EA /* Assets.xcassets in Resources */,
