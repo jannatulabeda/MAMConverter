@@ -15,22 +15,19 @@
 
 
 #import <UIKit/UIKit.h>
+#import "SelectTimeZoneViewController.h"
 
 
+@interface TimeConverter : UIViewController <SelectTimeZoneViewControllerDelegate>
 
-@interface TimeConverter : UIViewController
+@property (weak, nonatomic) IBOutlet UIDatePicker *dateFromDatePicker;
+@property (weak, nonatomic) IBOutlet UIDatePicker *timeFromDatePicker;
 
-@property (weak, nonatomic) IBOutlet UIDatePicker *takeDate;
-
-@property (weak, nonatomic) IBOutlet UIDatePicker *takeTime;
-
-- (IBAction)selectCountry:(id)sender;
+- (IBAction)selectZone:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *selectZoneButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-
-
 
 @end
 

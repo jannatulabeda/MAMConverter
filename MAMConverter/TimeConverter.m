@@ -13,21 +13,16 @@
 //
 
 
-
 #import "TimeConverter.h"
-
 
 
 @interface TimeConverter ()
 
 
-
 @end
 
 
-
 @implementation TimeConverter
-
 
 
 - (void)viewDidLoad {
@@ -35,67 +30,44 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view, typically from a nib.
-    
-    
-    
-    
-    
-    
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];
     
     // Dispose of any resources that can be recreated.
-    
 }
 
+- (IBAction)selectZone:(id)sender {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    SelectTimeZoneViewController *controller = (SelectTimeZoneViewController  *)[mainStoryboard instantiateViewControllerWithIdentifier: @"SelectTimeZone"];
+    controller.delegate = self;
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
-
-- (IBAction)selectCountry:(id)sender {
-    
-    
+#pragma mark - Delegate method
+-(void) selectTimeZone:(NSString *)nameTimeZone {
+    NSDate *takenDate = [[NSDate alloc] init];    
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    
-    [outputFormatter setDateFormat:@"h:mm:ss a"];
-    
-    
-    
-    self.timeLabel.text = [outputFormatter stringFromDate:self.takeTime.date];
-    
-    [outputFormatter setDateFormat:@"yyyy'-'MM'-'dd"];
-    
-    //NSDate *setDate =
-    
-    self.dateLabel.text = [outputFormatter stringFromDate:[self.takeDate date]];
-    NSString *dateString = self.timeLabel.text;//self.dateLabel.text;
-    NSLog(@"... %@ %@",[outputFormatter stringFromDate:self.takeTime.date],[NSTimeZone localTimeZone]);
-
-    //NSString *str = @"2012-12-17 04:36:25";
-    
-    NSString *str = self.dateLabel.text;
-    str = [str stringByAppendingString:@" "];
-    str = [str stringByAppendingString:self.timeLabel.text];
-    
-    NSDateFormatter* gmtDf = [[NSDateFormatter alloc] init];
-    [gmtDf setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-    [gmtDf setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate* gmtDate = [gmtDf dateFromString:str];
-    NSLog(@">>>>%@",gmtDate);
-    
-    NSDateFormatter* estDf = [[NSDateFormatter alloc] init];
-    [estDf setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
-    [estDf setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate *estDate = [estDf dateFromString:[gmtDf stringFromDate:gmtDate]]; // you can also use str
-    NSLog(@"%@",estDate);
-    
-    NSLog(@"*********%@",dateString);
-    
-    
-    
+    //combining separate date and time........
+    [outputFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    [outputFormatter setDateFormat:@"h:mm a"];
+    NSString *timeString = [outputFormatter stringFromDate:self.timeFromDatePicker.date];
+    [outputFormatter setDateFormat:@"yyyy'-'MM'-'dd' '"];
+    NSString *dateString = [outputFormatter stringFromDate:self.dateFromDatePicker.date];
+    [outputFormatter setDateFormat:@"yyyy'-'MM'-'dd h:mm a"];
+    NSString *takenDateString = dateString;
+    takenDateString = [dateString stringByAppendingString:timeString];
+    //getting the time from date picker
+    takenDate = [outputFormatter dateFromString:takenDateString];
+    //changing timezone according to selection using separate date formatter
+    NSDateFormatter *outputFormatter1 = [[NSDateFormatter alloc] init];
+    [outputFormatter1 setDateFormat:@"yyyy'-'MM'-'dd h:mm a"];
+    [outputFormatter1 setTimeZone:[NSTimeZone timeZoneWithName:nameTimeZone]];
+    //result date and time...
+    [self.selectZoneButton setTitle:nameTimeZone forState:UIControlStateNormal];
+    self.dateLabel.text = [outputFormatter1 stringFromDate:takenDate];
 }
 
 @end
