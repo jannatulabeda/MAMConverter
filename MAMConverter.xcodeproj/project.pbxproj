@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		646C34911C685C9E0079198D /* UnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 646C34901C685C9E0079198D /* UnitConverter.m */; };
+		647A2A1C1C6CA86C002C5F23 /* ConstantLiterals.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A2A161C6CA86C002C5F23 /* ConstantLiterals.m */; };
+		647A2A1D1C6CA86C002C5F23 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A2A181C6CA86C002C5F23 /* Country.m */; };
+		647A2A1E1C6CA86C002C5F23 /* Currencies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 647A2A191C6CA86C002C5F23 /* Currencies.plist */; };
+		647A2A1F1C6CA86C002C5F23 /* SelectCountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A2A1B1C6CA86C002C5F23 /* SelectCountryViewController.m */; };
 		649874FC1C69D3DE002497BF /* Blue copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 649874FB1C69D3DE002497BF /* Blue copy.png */; };
 		649874FE1C69D741002497BF /* swap-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 649874FD1C69D741002497BF /* swap-image.png */; };
 		64CE32C21C684AE1008393EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CE32C11C684AE1008393EA /* main.m */; };
@@ -27,6 +31,13 @@
 		271FAF9EDC76DA0BA84B4CE5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		646C348F1C685C9E0079198D /* UnitConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitConverter.h; sourceTree = "<group>"; };
 		646C34901C685C9E0079198D /* UnitConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitConverter.m; sourceTree = "<group>"; };
+		647A2A151C6CA86C002C5F23 /* ConstantLiterals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantLiterals.h; sourceTree = "<group>"; };
+		647A2A161C6CA86C002C5F23 /* ConstantLiterals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantLiterals.m; sourceTree = "<group>"; };
+		647A2A171C6CA86C002C5F23 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		647A2A181C6CA86C002C5F23 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		647A2A191C6CA86C002C5F23 /* Currencies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Currencies.plist; sourceTree = "<group>"; };
+		647A2A1A1C6CA86C002C5F23 /* SelectCountryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCountryViewController.h; sourceTree = "<group>"; };
+		647A2A1B1C6CA86C002C5F23 /* SelectCountryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCountryViewController.m; sourceTree = "<group>"; };
 		649874FB1C69D3DE002497BF /* Blue copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue copy.png"; sourceTree = "<group>"; };
 		649874FD1C69D741002497BF /* swap-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swap-image.png"; sourceTree = "<group>"; };
 		64CE32BD1C684AE1008393EA /* MAMConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAMConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +91,13 @@
 		64CE32BF1C684AE1008393EA /* MAMConverter */ = {
 			isa = PBXGroup;
 			children = (
+				647A2A151C6CA86C002C5F23 /* ConstantLiterals.h */,
+				647A2A161C6CA86C002C5F23 /* ConstantLiterals.m */,
+				647A2A171C6CA86C002C5F23 /* Country.h */,
+				647A2A181C6CA86C002C5F23 /* Country.m */,
+				647A2A191C6CA86C002C5F23 /* Currencies.plist */,
+				647A2A1A1C6CA86C002C5F23 /* SelectCountryViewController.h */,
+				647A2A1B1C6CA86C002C5F23 /* SelectCountryViewController.m */,
 				649874FD1C69D741002497BF /* swap-image.png */,
 				649874FB1C69D3DE002497BF /* Blue copy.png */,
 				64CE32DA1C684FF7008393EA /* logo.png */,
@@ -189,6 +207,7 @@
 			files = (
 				649874FE1C69D741002497BF /* swap-image.png in Resources */,
 				649874FC1C69D3DE002497BF /* Blue copy.png in Resources */,
+				647A2A1E1C6CA86C002C5F23 /* Currencies.plist in Resources */,
 				64CE32DB1C684FF7008393EA /* logo.png in Resources */,
 				64CE32D31C684AE2008393EA /* LaunchScreen.storyboard in Resources */,
 				64CE32D01C684AE2008393EA /* Assets.xcassets in Resources */,
@@ -251,9 +270,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				647A2A1D1C6CA86C002C5F23 /* Country.m in Sources */,
 				64CE32CB1C684AE1008393EA /* TimeConverter.m in Sources */,
 				64CE32C51C684AE1008393EA /* AppDelegate.m in Sources */,
+				647A2A1C1C6CA86C002C5F23 /* ConstantLiterals.m in Sources */,
 				64CE32C81C684AE1008393EA /* CurrencyConverter.m in Sources */,
+				647A2A1F1C6CA86C002C5F23 /* SelectCountryViewController.m in Sources */,
 				84E7107F1C6B5DCC0040E9D3 /* SelectTimeZoneViewController.m in Sources */,
 				64CE32C21C684AE1008393EA /* main.m in Sources */,
 				646C34911C685C9E0079198D /* UnitConverter.m in Sources */,

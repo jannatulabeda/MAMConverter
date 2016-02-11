@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SelectCountryViewController.h"
 
-@interface CurrencyConverter : UIViewController
+@interface CurrencyConverter : UIViewController <UITextFieldDelegate, SelectCountryViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *fromButton;
+@property (weak, nonatomic) IBOutlet UIButton *toButton;
+@property (weak, nonatomic) IBOutlet UIImageView *fromImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *toImageView;
+@property (weak, nonatomic) IBOutlet UITextField *entryAmountTextField;
+@property (weak, nonatomic) IBOutlet UIButton *swapCurrencyButton;
+@property (weak, nonatomic) IBOutlet UILabel *resultAmountLabel;
+- (IBAction)selectToCountry:(id)sender;
+- (IBAction)selectFromCountry:(id)sender;
+- (IBAction)swapFromAndTo:(id)sender;
 
 @end
 
