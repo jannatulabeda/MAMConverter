@@ -18,6 +18,7 @@
 		64CE32D01C684AE2008393EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64CE32CF1C684AE2008393EA /* Assets.xcassets */; };
 		64CE32D31C684AE2008393EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64CE32D11C684AE2008393EA /* LaunchScreen.storyboard */; };
 		64CE32DB1C684FF7008393EA /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CE32DA1C684FF7008393EA /* logo.png */; };
+		84E7107F1C6B5DCC0040E9D3 /* SelectTimeZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7107E1C6B5DCC0040E9D3 /* SelectTimeZoneViewController.m */; };
 		ABB0D2362B4C16B4DD62F615 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D000A3CB5BF7B7C4F04B421 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		64CE32D21C684AE2008393EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64CE32D41C684AE2008393EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64CE32DA1C684FF7008393EA /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		84E7107D1C6B5DCC0040E9D3 /* SelectTimeZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeZoneViewController.h; sourceTree = "<group>"; };
+		84E7107E1C6B5DCC0040E9D3 /* SelectTimeZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeZoneViewController.m; sourceTree = "<group>"; };
 		9D000A3CB5BF7B7C4F04B421 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +96,8 @@
 				64CE32D11C684AE2008393EA /* LaunchScreen.storyboard */,
 				64CE32D41C684AE2008393EA /* Info.plist */,
 				64CE32C01C684AE1008393EA /* Supporting Files */,
+				84E7107D1C6B5DCC0040E9D3 /* SelectTimeZoneViewController.h */,
+				84E7107E1C6B5DCC0040E9D3 /* SelectTimeZoneViewController.m */,
 			);
 			path = MAMConverter;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				64CE32CB1C684AE1008393EA /* TimeConverter.m in Sources */,
 				64CE32C51C684AE1008393EA /* AppDelegate.m in Sources */,
 				64CE32C81C684AE1008393EA /* CurrencyConverter.m in Sources */,
+				84E7107F1C6B5DCC0040E9D3 /* SelectTimeZoneViewController.m in Sources */,
 				64CE32C21C684AE1008393EA /* main.m in Sources */,
 				646C34911C685C9E0079198D /* UnitConverter.m in Sources */,
 			);
