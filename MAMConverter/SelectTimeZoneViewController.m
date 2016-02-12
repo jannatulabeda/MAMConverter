@@ -42,7 +42,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *selectTimeZones = @"selectTimeZonesCell";
+    static NSString *selectTimeZones = @"SelectTimeZonesCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:selectTimeZones];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:selectTimeZones];
