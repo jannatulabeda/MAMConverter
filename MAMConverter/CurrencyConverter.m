@@ -54,6 +54,7 @@
   [self.fromButton setTitle:toButtonTitle forState:UIControlStateNormal];
   self.entryAmountTextField.text = @"";
   [self.resultAmountLabel setText:DEFAULT_VALUE_FOR_RESULT_LABEL];
+  
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
