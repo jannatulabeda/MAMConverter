@@ -8,6 +8,7 @@
 
 
 #import "CurrencyConverter.h"
+#import "ConstantLiterals.h"
 
 @interface CurrencyConverter ()
 @property (nonatomic) BOOL isFromButtonTapped;
@@ -52,29 +53,35 @@
   [self.toButton setTitle:fromButtonTitle forState:UIControlStateNormal];
   [self.fromButton setTitle:toButtonTitle forState:UIControlStateNormal];
   self.entryAmountTextField.text = @"";
-  [self.resultAmountLabel setText:@""];
+  [self.resultAmountLabel setText:DEFAULT_VALUE_FOR_RESULT_LABEL];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-  NSString *updatedString = [textField.text
+  NSString *entryAmountString = [textField.text
                              stringByReplacingCharactersInRange:range
                              withString:string];
-
-  NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-  formatter.numberStyle = NSNumberFormatterDecimalStyle;
-  NSNumber *entryAmountNumber = [formatter numberFromString:updatedString];
-  double value = [entryAmountNumber doubleValue];
-  value *= 2.0;
-  entryAmountNumber = [NSNumber numberWithDouble:value];
-  updatedString = [entryAmountNumber stringValue];
-
-  self.resultAmountLabel.text = updatedString;
+  
+  __block NSString *stringData;
+  NSString *fromCountryCode = [self.fromButton currentTitle];
+  NSString *toCountryCode = [self.toButton currentTitle];
+  NSString *currencyURLString = [NSString stringWithFormat:URL_STRING_WITH_FORMAT, fromCountryCode, toCountryCode, entryAmountString, API_KEY];
+  
+  NSURL *currencyURL = [NSURL URLWithString:currencyURLString];
+  
+  NSURLRequest *request = [NSURLRequest requestWithURL:currencyURL];
+  NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError *  error) {
+    stringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      self.resultAmountLabel.text = stringData;
+    });
+  }];
+  [dataTask resume];
   return YES;
 }
 
 -(BOOL)textFieldShouldClear:(UITextField *)textField{
-  self.resultAmountLabel.text = @"";
+  self.resultAmountLabel.text = DEFAULT_VALUE_FOR_RESULT_LABEL;
   return YES;
 }
 
@@ -89,5 +96,6 @@
   if (self.isFromButtonTapped) {
     [self.fromButton setTitle:currencyCodeString forState:UIControlStateNormal];
   }
+  self.resultAmountLabel.text = DEFAULT_VALUE_FOR_RESULT_LABEL;
 }
 @end
