@@ -12,6 +12,7 @@
 
 @interface SelectCountryViewController ()
 @property (strong, nonatomic) NSMutableArray *countryList;
+@property (strong, nonatomic) NSMutableArray *searchedCountryList;
 @end
 
 @implementation SelectCountryViewController
@@ -31,6 +32,7 @@
     
     [self.countryList addObject:country];
   }
+  self.searchedCountryList = [[NSMutableArray alloc] initWithArray:self.countryList];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,22 +47,41 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [self.countryList count];
+  return [self.searchedCountryList count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CurrencyCodeCell" forIndexPath:indexPath];
   
-  Country *country = [self.countryList objectAtIndex:indexPath.row];
+  Country *country = [self.searchedCountryList objectAtIndex:indexPath.row];
   cell.textLabel.text = country.currencyName;
   cell.detailTextLabel.text = country.currencyCode;
   return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+  if ([searchText length] != 0) {
+    [self.searchedCountryList removeAllObjects];
+    for (Country *country in self.countryList) {
+      NSRange r1 = [country.currencyCode rangeOfString:searchText options:NSCaseInsensitiveSearch];
+      NSRange r2 = [country.currencyName rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        if ((r1.location != NSNotFound) || (r2.location != NSNotFound)) {
+          [self.searchedCountryList addObject:country];
+        }
+    }
+  } else {
+    [self.searchedCountryList removeAllObjects];
+    [self.searchedCountryList addObjectsFromArray:self.countryList];
+  }
   
-  Country *temp = [self.countryList objectAtIndex:indexPath.row];
+  [self.tableView reloadData];
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  Country *temp = [self.searchedCountryList objectAtIndex:indexPath.row];
   [self.countryDelegate selectCountryViewControllerDidSelect:temp.currencyCode];
   [self.navigationController popViewControllerAnimated:YES];
 }

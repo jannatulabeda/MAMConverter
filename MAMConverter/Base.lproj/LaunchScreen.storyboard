@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,24 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJB-DH-9UG">
-                                <rect key="frame" x="113" y="154" width="94" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="i5b-VV-7l0">
-                                <rect key="frame" x="77" y="237" width="167" height="246"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="WAC-kU-CVh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="i5b-VV-7l0" secondAttribute="bottom" constant="85" id="6dM-U2-Zjt"/>
-                            <constraint firstItem="i5b-VV-7l0" firstAttribute="centerX" secondItem="gJB-DH-9UG" secondAttribute="centerX" id="PHv-QH-yIa"/>
-                            <constraint firstItem="i5b-VV-7l0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="61" id="VeI-vm-qp3"/>
-                            <constraint firstItem="i5b-VV-7l0" firstAttribute="top" secondItem="gJB-DH-9UG" secondAttribute="bottom" constant="62" id="Z4A-Xw-j7u"/>
-                            <constraint firstItem="gJB-DH-9UG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hWj-vi-P7B"/>
-                            <constraint firstItem="gJB-DH-9UG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-119.5" id="jhN-DR-caz"/>
+                            <constraint firstItem="WAC-kU-CVh" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="3B7-be-C07"/>
+                            <constraint firstItem="WAC-kU-CVh" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="6uV-i7-BM8"/>
+                            <constraint firstItem="WAC-kU-CVh" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="H5b-1k-XOg"/>
+                            <constraint firstItem="WAC-kU-CVh" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="oam-sp-BhW"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -45,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo.png" width="280" height="414"/>
+        <image name="LaunchScreen.png" width="640" height="960"/>
     </resources>
 </document>

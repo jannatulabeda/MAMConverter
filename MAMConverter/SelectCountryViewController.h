@@ -15,7 +15,8 @@
 
 @end
 
-@interface SelectCountryViewController : UITableViewController
+@interface SelectCountryViewController : UITableViewController <UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *currencySearchBar;
 
 @property (weak, nonatomic) id<SelectCountryViewControllerDelegate>countryDelegate;
 
