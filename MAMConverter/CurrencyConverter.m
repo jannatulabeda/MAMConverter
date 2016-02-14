@@ -9,10 +9,12 @@
 
 #import "CurrencyConverter.h"
 #import "ConstantLiterals.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CurrencyConverter ()
 @property (nonatomic) BOOL isFromButtonTapped;
 @property (nonatomic) BOOL isToButtonTapped;
+@property (strong, nonatomic) IBOutlet UIView *containerView;
 @end
 
 @implementation CurrencyConverter
@@ -20,6 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    // Set containerView
+    [self.containerView.layer setBorderWidth:1.0];
+    [self.containerView.layer setBorderColor:[UIColor colorWithRed:253.0/255.0 green:147.0/255.0 blue:11.0/255.0 alpha:1.0].CGColor];
+    [self.containerView.layer setCornerRadius:8.0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,4 +106,5 @@
   }
   self.resultAmountLabel.text = DEFAULT_VALUE_FOR_RESULT_LABEL;
 }
+
 @end

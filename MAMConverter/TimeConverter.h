@@ -27,7 +27,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectZoneButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
