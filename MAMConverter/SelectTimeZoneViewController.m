@@ -38,7 +38,7 @@
 */
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.zoneValueArray count];
+    return [self.displayZoneValueArray count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,11 +54,27 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *timeZoneName = [[NSString alloc] init];
     //getting time zone name from the time zone name array...
-    timeZoneName = [self.zoneValueArray objectAtIndex:indexPath.row];
+    timeZoneName = [self.displayZoneValueArray objectAtIndex:indexPath.row];
     //calling the delegate method...
     [self.delegate selectTimeZone:timeZoneName];
     [self.navigationController popViewControllerAnimated:YES];
+}
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if ([searchText length] != 0) {
+        [self.displayZoneValueArray removeAllObjects];
+        for (NSString *zone in self.zoneValueArray) {
+            NSRange r1 = [zone rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if ((r1.location != NSNotFound)) {
+                [self.displayZoneValueArray addObject:zone];
+            }
+        }
+    } else {
+        [self.displayZoneValueArray removeAllObjects];
+        [self.displayZoneValueArray addObjectsFromArray:self.zoneValueArray];
+    }
+    
+    [self.selectTimeZoneTableView reloadData];
 }
 
 @end
