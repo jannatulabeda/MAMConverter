@@ -17,7 +17,10 @@
 
 
 @interface TimeConverter ()
+
+
 @end
+
 
 @implementation TimeConverter
 
@@ -25,8 +28,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
-    // Set 
     
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -46,7 +47,6 @@
 }
 
 #pragma mark - Delegate method
-
 -(void) selectTimeZone:(NSString *)nameTimeZone {
     NSDate *takenDate = [[NSDate alloc] init];    
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
