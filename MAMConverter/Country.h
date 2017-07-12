@@ -12,5 +12,7 @@
 
 @property (strong, nonatomic) NSString *currencyName;
 @property (strong, nonatomic) NSString *currencyCode;
+@property (strong, nonatomic) NSString *currencyTesting;
+
 
 @end
